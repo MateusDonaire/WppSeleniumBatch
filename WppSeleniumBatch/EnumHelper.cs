@@ -10,7 +10,7 @@ namespace WppSeleniumBatch
         public static string PathChrome => @"C:\ProgramFiles\Google\Chrome\Application\driver\data";
         public static string PathWebDriver => @"C:\WebDriver";
         public static string PathImage => @"C:\PlanoLeitura\";
-        public static string FirstGroup => "Sequencial";
+        public static string FirstGroup => "Grupo 1";
         public static string SecondGroup => "Grupo 2";
 
 
