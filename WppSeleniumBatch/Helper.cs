@@ -26,9 +26,11 @@ namespace WppSeleniumBatch
             Thread.Sleep(1000);
             inputSimulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.RETURN);
             Thread.Sleep(2000);
+
             var sendImage = driver.FindElement(By.XPath(@"//*[@id='app']/div/div/div[2]/div[2]/span/div/span/div/div/div[2]/div/div[2]/div[2]/div/div/span"));
             sendImage.Click();
             Thread.Sleep(2000);
+
         }
 
         public void SelectGroup(ChromeDriver driver, string group)
@@ -75,6 +77,25 @@ namespace WppSeleniumBatch
 
 
             return diaFormatado;
+        }
+
+        public string ToFormatWatchTime(System.Diagnostics.Stopwatch watch, int minutes = 0, int seconds = 0)
+        {
+            return Convert.ToInt32(watch.Elapsed.TotalMinutes) + " minutos e " + Convert.ToInt32(watch.Elapsed.TotalSeconds) + " segundos" ;
+        }
+
+        public void SendTimeWatch(ChromeDriver driver, string group, string time1, string time2)
+        {
+            string message =$"O Whatsapp demorou *{time1}* para abrir e *{time2}* para enviar as imagens! =D ";
+
+            var selectImage = driver.FindElement(By.XPath(@"//*[@id='main']/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]/p"));
+            selectImage.SendKeys(message);
+            Thread.Sleep(1500);
+
+            var sendImage = driver.FindElement(By.XPath(@"//*[@id='main']/footer/div[1]/div/span[2]/div/div[2]/div[2]/button/span"));
+            sendImage.Click();
+            Thread.Sleep(2000);
+
         }
     }
 }

@@ -12,6 +12,7 @@ namespace WppSeleniumBatch
         public static string PathImage => @"C:\PlanoLeitura\";
         public static string FirstGroup => "SEQUENCIAL";
         public static string SecondGroup => "ROBERT ROBERTS";
+        public static string MyGroup => "Eu";
 
 
     }
